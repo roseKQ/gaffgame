@@ -35,11 +35,21 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-
-
+<script src="https://d3js.org/d3.v3.min.js"></script>
 
 </head>
+
+<style>
+	.chart rect {
+		fill: steelblue;
+	}
+	
+	.chart text {
+		fill: steelblue;
+		font: 10px sans-serif;
+		text-anchor: end;
+	}
+</style>
 
 <body id="page-top">
 
@@ -72,30 +82,45 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-7">
-                    <div class="header-content">
-                        <div class="header-content-inner">
-                            <h1>This is the scoreboard and drill down</h1>
-                            <a href="" class="btn btn-outline btn-xl" onclick="myFunction()" >Next</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-5">
+<header>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-7">
+				<div class="header-content">
+					<div class="header-content-inner">
+
+						<h1>Scores</h1>
+						<div class="chart" id="chart2"></div>
+						<script src="score2.js"></script>
+
+					</div>
+				</div>
+			</div>
+                            <div class="col-sm-5">
                
                         
                             <div class="device-container">
-
+                                <div ></div>
+                                <div class="screen">
+<a href="#drill_down" class="btn btn-outline btn-xl page-scroll">drill down</a>
+                                </div>
 
                             </div>
-
+                        
+                   
                 </div>
-            </div>
-        </div>
-    </header>
+		</div>
 
+	</div>
+</header>
+
+    <section id="drill_down" class="contact bg-primary">
+        <div class="container">
+                          <h1>Score drill down</h1>
+                            <div class="chart" id = "chart"></div>
+                            <script src="score1.js"></script> 
+        </div>
+    </section>
 
     <footer>
         <div class="container">
@@ -118,6 +143,8 @@
 function myFunction() { window.open("DataDashboard.html");
 window.close("Scoreboard.html");} </script>
 
+
+
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
 
@@ -129,8 +156,6 @@ window.close("Scoreboard.html");} </script>
 
     <!-- Theme JavaScript -->
     <script src="js/new-age.min.js"></script>
-
-    <script> </script>
 
 </body>
 
