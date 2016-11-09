@@ -6,9 +6,11 @@ letter-spacing:1px}
 .chart
 {
 background-color:#fff;
+color: #6b9aff;
 padding: 15px;
 font-family:Catamaran,Helvetica,Arial,sans-serif;
 font-weight:200;
+
 letter-spacing:1px;
 border-radius: 25px;
 box-shadow: 10px 10px 5px #888888;}
