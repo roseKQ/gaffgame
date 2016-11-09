@@ -18,10 +18,11 @@ function init() {
   $('#cardSlots').html( '' );
  
   // Create the pile of shuffled cards
-  var numbers = [ "Select", "*", "From", "Where", "Delete", "Drop", "Remove", "Sort", "drop", "Delete" ];
+  var numbers = [ "Select", "*", "From", "Crime", "Delete", "Drop", "Remove", "Sort", "drop", "Delete" ];
   
  
   for ( var i=0; i<10; i++ ) {
+    console.log(numbers[1]);
     $('<div>' + numbers[i] + '</div>').data( 'number', numbers[i] ).attr( 'id', 'card'+numbers[i] ).appendTo( '#cardPile' ).draggable( {
       containment: '#header-content-inner',
       stack: '#cardPile div',
@@ -31,9 +32,9 @@ function init() {
   }
  
   // Create the card slots
-  var words = [ "Select", '...', '...', '...', '...' ];
-  for ( var i=1; i<=5; i++ ) {
-    $('<div>' + words[i-1] + '</div>').data( 'number', i ).appendTo( '#cardSlots' ).droppable( {
+  var words = [ "Select", "*", "From", "Crime" ];
+  for ( var i=1; i<=4; i++ ) {
+    $('<div>' + words[i-1] + '</div>').data( 'number', words[i-1] ).appendTo( '#cardSlots' ).droppable( {
       accept: '#cardPile div',
       hoverClass: 'hovered',
       drop: handleCardDrop
@@ -44,7 +45,9 @@ function init() {
 
 function handleCardDrop( event, ui ) {
   var slotNumber = $(this).data( 'number' );
+  console.log($(this).data( 'number' ));
   var cardNumber = ui.draggable.data( 'number' );
+  console.log(ui.draggable.data( 'number' ));
  
   // If the card was dropped to the correct slot,
   // change the card colour, position it directly
@@ -58,12 +61,13 @@ function handleCardDrop( event, ui ) {
     ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
     ui.draggable.draggable( 'option', 'revert', false );
     correctCards++;
+    console.log(correctCards);
   } 
    
   // If all the cards have been placed correctly then display a message
   // and reset the cards for another go
  
-  if ( correctCards == 10 ) {
+  if ( correctCards == 4 ) {
     $('#successMessage').show();
     $('#successMessage').animate( {
       left: '380px',

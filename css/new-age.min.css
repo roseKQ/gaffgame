@@ -105,8 +105,9 @@ box-shadow: 10px 10px 5px #888888;}
  #cardSlots {
   float: bottom;
   width: fit-content;
-  height:auto;
+  height:60px;
   padding-top: 0px;
+  padding-bottom: 20px;
   padding: 0px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -117,10 +118,11 @@ box-shadow: 10px 10px 5px #888888;}
  
 #cardSlots div, #cardPile div {
   float: left;
-  width: 90px;
+  width:110px;
   height: 40px;
-  padding: 10px;
-  padding-bottom: 10px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 40px; 
   border: 2px solid #333;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -139,6 +141,7 @@ box-shadow: 10px 10px 5px #888888;}
  
 #cardSlots div {
   border-style: dashed;
+  color: white;
 }
  
 #cardPile div {
@@ -156,16 +159,16 @@ box-shadow: 10px 10px 5px #888888;}
  
 /* Individually coloured cards */
  
-#card1.correct { background: red; }
-#card2.correct { background: brown; }
-#card3.correct { background: orange; }
-#card4.correct { background: yellow; }
-#card5.correct { background: green; }
-#card6.correct { background: cyan; }
-#card7.correct { background: blue; }
-#card8.correct { background: indigo; }
-#card9.correct { background: purple; }
-#card10.correct { background: violet; }
+#card1.correct { background: #65b858; }
+#card2.correct { background: 65b858; }
+#card3.correct { background: 65b858; }
+#card4.correct { background: 65b858; }
+#card5.correct { background: 65b858; }
+#card6.correct { background: 65b858; }
+#card7.correct { background: 65b858; }
+#card8.correct { background: 65b858; }
+#card9.correct { background: 65b858; }
+#card10.correct { background: 65b858; }
  
  
 /* "You did it!" message */
