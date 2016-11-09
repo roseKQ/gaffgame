@@ -40,10 +40,10 @@
 
 
 <script>
-function clickCounter() {
+function addToFinalScore() {
     if(typeof(Storage) !== "undefined") {
         if (localStorage.storage) {
-            localStorage.storage = Number(localStorage.storage)+1;
+            localStorage.storage = Number(localStorage.storage)+score;
             
         } else {
             localStorage.storage = 1;
@@ -143,7 +143,7 @@ function displayScore(){
 						<h1>Scores</h1>
 						
 						
-                        <p><button onclick="clickCounter()">click here</button></p>
+                        <p><button onclick="addToFinalScore()">click here</button></p>
                         <a href="test.html"> test </a>
                         <div id="result"></div>
                         
