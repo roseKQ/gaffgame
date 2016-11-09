@@ -5,6 +5,112 @@
 
 <head>
 
+<!--this is all my code that needs reorganised-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<style>
+    .{
+    margin: 0;
+    padding: 0;
+}
+
+#pop_background{
+    position:fixed;
+    width: 100%;
+    height: 900px;
+    top: 0;
+    left:0;
+    background: #000;
+    opacity: .8;
+    z-index: 1000;
+    cursor: pointer;
+    display: none;
+}
+
+#pop_box{
+    position: absolute;
+    background: #fff;
+    width: 30%;
+    margin: 100px 0 0 35%;
+    padding: 20px;
+    z-index: 1500;
+    display: none;
+}
+
+#close{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #999;
+    text-align: center;
+    line-height: 30px;
+    font-size: 30px;
+    float:right;
+}
+</style>
+<style>
+.objects {
+    display:inline-block;
+    background-color: #FFF3CC;
+    border: #DFBC6A 1px solid;
+    width: 50px; 
+    height: 50px;
+    margin: 10px;
+    padding: 8px;
+    font-size: 18px;
+    text-align: center;
+    box-shadow: 2px 2px 2px #999;
+    cursor: move;
+}
+#drop_zone {
+    background-color: #FFF3CC; 
+    border: #999 1px solid;
+    width: 280px; 
+    height: 200px;
+    padding: 8px;
+    font-size: 18px;
+}
+</style>
+<script>
+function _(id){
+   return document.getElementById(id);	
+}
+var droppedIn = false;
+function drag_start(event) {
+    _('app_status').innerHTML = "You are dragging object"+event.target.getAttribute('id');
+    event.dataTransfer.dropEffect = "move";
+    event.dataTransfer.setData("text", event.target.getAttribute('id') );
+}
+function drag_enter(event) {
+    _('app_status').innerHTML = "You are dragging object "+event.target.getAttribute('id');
+}
+function drag_leave(event) {
+    _('app_status').innerHTML = "You are dragging object "+event.target.getAttribute('id');
+}
+function drag_drop(event) {
+    event.preventDefault(); /* Prevent undesirable default behavior while dropping */
+    var elem_id = event.dataTransfer.getData("text");
+    event.target.appendChild( _(elem_id) );
+    _('app_status').innerHTML = "Dropped "+elem_id+" into the "+event.target.getAttribute('id');
+    _(elem_id).removeAttribute("draggable");
+    _(elem_id).style.cursor = "default";
+    droppedIn = true;
+}
+function drag_end(event) {
+    if(droppedIn == false){
+        _('app_status').innerHTML = "You are dragging object "+event.target.getAttribute('id')+" go.";
+    }
+	droppedIn = false;
+}
+function readDropZone(){
+    for(var i=0; i < _("drop_zone").children.length; i++){
+        alert(_("drop_zone").children[i].id+" is in the drop zone");
+    }
+    // Run Ajax request to pass any data to your server */
+}
+</script>
+<!--this is all my code that needs reorganised-->
+
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,12 +135,6 @@
     <!-- Theme CSS -->
     <link href="css/new-age.min.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 
@@ -76,6 +176,84 @@
                     <div class="header-content">
                         <div class="header-content-inner">
                             <h1>This is primary keys page</h1>
+                            <div class="container-fluid" width="950px" height="1100px" style="background-color:red">
+
+    <p>Your task is to put the primary key or foreign key into the correct columns</p>
+        <h2 id="app_status">Hint...</h2>
+        <h1>Drop Zone</h1>
+    <div id="drop_zone" ondragenter="drag_enter(event)" ondrop="drag_drop(event)" ondragover="return false" ondragleave="drag_leave(event)" >
+    </div>
+        <div id="object1" class="objects" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)">
+            <img id="crimepk" src="img/primarykey.png" alt="Primary Key icon" width="30" height="40">
+        </div>
+            <div id="object2" class="objects" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)">
+                <img id="crimiefk" src="img/foreignkey.png" alt="Primary Key icon" width="30" height="40">
+            </div>
+                <div id="object3" class="objects" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)">
+                    <img id="schoolpk" src="img/primarykey.png" alt="Primary Key icon" width="30" height="40">
+                </div>
+
+
+<div id="pop_background"></div>
+<div id="pop_box">
+    <span id="close">&times;</span>
+    <p style="color:black">this is the hint to help the user</p>
+</div>
+
+<script>
+    $(document).ready(function(){
+
+        $('#crimepk').click(function(){
+
+            $('#pop_background').fadeIn();
+            $('#pop_box').fadeIn();
+            return false;       
+        });
+
+        $('#crimiefk').click(function(){
+
+            $('#pop_background').fadeIn();
+            $('#pop_box').fadeIn();
+            return false;       
+        });
+
+        $('#schoolpk').click(function(){
+
+            $('#pop_background').fadeIn();
+            $('#pop_box').fadeIn();
+            return false;       
+        });
+
+        $('#close').click(function(){
+
+            $('#pop_background').fadeOut();
+            $('#pop_box').fadeOut();
+            return false;       
+        });
+
+        $('#pop_background').click(function(){
+
+            $('#pop_background').fadeOut();
+            $('#pop_box').fadeOut();
+            return false;       
+        });
+    });
+</script>
+
+<!--<button onclick="readDropZone()">Get Object Data</button>-->
+                            <!--<div id="schoolforeignkey" class="objects" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)">
+                                <img id="schoolfk" src="img/foreignkey.png" alt="Primary Key icon" width="30" height="40">
+                            </div>
+                            <div id="parkprimarykey" class="objects" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)">
+                                <img id="parkpk" src="img/primarykey.png" alt="Primary Key icon" width="30" height="40">
+                            </div>-->  
+
+
+                            <!--<img id="drag1" src="img/primarykey.png" alt="Primary Key icon" draggable="true" ondragstart="drag(event)" width="30" height="40">
+
+                            <img id="drag2" src="img/foreignkey.png" alt="Foreign Key icon" draggable="true" ondragstart="drag(event)" width="30" height="40">-->
+ 
+ 
                             <a href="" class="btn btn-outline btn-xl" onclick="myFunction()" >Next</a>
                         </div>
                     </div>
