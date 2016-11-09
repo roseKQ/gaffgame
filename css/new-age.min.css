@@ -60,7 +60,6 @@ box-shadow: 10px 10px 5px #888888;}
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
-  background:red;
 }
  
 /* Header/footer boxes */
@@ -85,35 +84,16 @@ box-shadow: 10px 10px 5px #888888;}
  
 #cardSlots {
   margin: 50px auto 0 auto;
-  background: #ddf;
 }
  
 /* The initial pile of unsorted cards */
  
-#cardPile {
-  margin: 0 auto;
-  background: #ffd;
-}
- 
-#cardSlots {
-  width: 550px;
-  height:140px;
-  padding: 20px;
-  border: 2px solid #333;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
-  -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
-  box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
-}
 
  #cardPile{
-  float:right;
-  width: 550px;
-  height: 140px;
-  padding: 20px;
-  border: 2px solid #333;
+  float:top;
+  width: fit-content;
+  height: auto;
+  margin: 0 auto;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
@@ -122,6 +102,17 @@ box-shadow: 10px 10px 5px #888888;}
   box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
 }
  
+ #cardSlots {
+  float: bottom;
+  width: fit-content;
+  height:auto;
+  padding-top: 0px;
+  padding: 0px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+
+}
 /* Individual cards and slots */
  
 #cardSlots div, #cardPile div {
@@ -129,12 +120,12 @@ box-shadow: 10px 10px 5px #888888;}
   width: 90px;
   height: 40px;
   padding: 10px;
-  padding-bottom: 0;
+  padding-bottom: 10px;
   border: 2px solid #333;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
-  margin: 0 0 0 10px;
+  margin: 5px 5 5 5px;
   background: #fff;
 }
  
