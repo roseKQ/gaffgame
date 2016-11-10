@@ -159,16 +159,16 @@ box-shadow: 10px 10px 5px #888888;}
  
 /* Individually coloured cards */
  
-#card1.correct { background: #65b858; }
-#card2.correct { background: 65b858; }
-#card3.correct { background: 65b858; }
-#card4.correct { background: 65b858; }
-#card5.correct { background: 65b858; }
-#card6.correct { background: 65b858; }
-#card7.correct { background: 65b858; }
-#card8.correct { background: 65b858; }
-#card9.correct { background: 65b858; }
-#card10.correct { background: 65b858; }
+#cardSelect.correct { background: #65b858; }
+#card\*.correct { background: #65b858; }
+#cardFrom.correct { background: #65b858; }
+#cardCrime.correct { background: #65b858; }
+#cardCrime.correct { background: #65b858; }
+#card6.correct { background: #65b858; }
+#card7.correct { background: #65b858; }
+#card8.correct { background: #65b858; }
+#card9.correct { background: #65b858; }
+#card10.correct { background: #65b858; }
  
  
 /* "You did it!" message */

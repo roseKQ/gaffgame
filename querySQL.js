@@ -1,4 +1,5 @@
 var correctCards = 0;
+
 $( init );
  
 function init() {
@@ -62,6 +63,7 @@ function handleCardDrop( event, ui ) {
     ui.draggable.draggable( 'option', 'revert', false );
     correctCards++;
     console.log(correctCards);
+    moveProgressBar();
   } 
    
   // If all the cards have been placed correctly then display a message
@@ -75,7 +77,13 @@ function handleCardDrop( event, ui ) {
       width: '400px',
       height: '100px',
       opacity: 1
+      
     } );
   }
- 
+
+  function moveProgressBar() {
+    var progress = correctCards;
+    
+  }
+
 }
