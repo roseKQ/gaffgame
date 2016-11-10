@@ -1,20 +1,32 @@
 
-function datatypes(){
-    var myList=document.getElementById("myList");
-    document.getElementById("message").innerHTML = myList;
+function datatypes(menu){
+    var selection=menu.options[menu.selectedIndex].text;
+    var isCorrect = false;
+    var correctAnswer = "Int";
+    var score = 0;
+    var noOfQuestions = 5;
 
-    /*var isCorrect = false;
-    var correctAnswer = "int";
-
+    console.log(selection);
     console.log(isCorrect);
     console.log(correctAnswer);
-    console.log(myList);*/
+    
+   
 
-   /* if(myList != correctAnswer){
+    if(selection == correctAnswer){
       isCorrect=true;
       console.log(isCorrect);
+      score ++;
+      console.log(score);
+      moveProgressBar();
     }else{
       console.log(isCorrect);
-    }*/
+      console.log(score);
+      moveProgressBar();
+    }
     
     }
+
+    function moveProgressBar() {
+    var progress = noOfQuestions;
+    
+  }

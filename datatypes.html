@@ -116,226 +116,70 @@
                             <table class="table">
                                 <tr>
                                     <td>ID</td>
-                                    <td><!--<div class="dropdown">
-                                            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Select
-                                            <span class="caret"></span></button>
-                                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                                                <li role="presentation"><a role="menuitem" href="javascript:void(0);">Varchar</a></li>
-                                                <li role="presentation" class="divider"></li>
-                                                <li role="presentation"><a role="menuitem" href="javascript:void(0);">Int</a></li>
-                                                <li role="presentation" class="divider"></li>
-                                                <li role="presentation"><a role="menuitem" href="javascript:void(0);">String</a></li>
-                                                <li role="presentation" class="divider"></li>
-                                                <li role="presentation"><a role="menuitem" href="javascript:void(0);">Boolean</a></li>
-                                                <li role="presentation" class="divider"></li>
-                                                <li role="presentation"><a role="menuitem" href="javascript:void(0);">CrimeCategory</a></li>
-                                            </ul>
-                                            <p id="demo"></p>
-                                    </div>-->
+                                    <td>
+
                                    
-                                   <!--<div class="btn-group">
-                                    <button type="button" onclick="dropdown()" id="buttonLabel" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="text">Select<span class="caret"></span>
-                                    </button>
-                                        <ul class="dropdown-menu" id="menu1">
-                                            <li><a href="javascript:void(0);">Varchar</a></li>
-                                            <li role="separator" class="divider"></li>
-                                            <li><a href="javascript:void(0);">Int</a></li>
-                                            <li role="separator" class="divider"></li>
-                                            <li><a href="javascript:void(0);">Decimal</a></li>
-                                            <li role="separator" class="divider"></li>
-                                            <li><a href="javascript:void(0);">Boolean</a></li>
-                                            <li role="separator" class="divider"></li>
-                                            
-                                        </ul>
-                                       <script>function dropdown(){var e = document.getElementById("menu1");
-                                               var value = e.options[e.selectedIndex].value;
-                                               var text = e.options[e.selectedIndex].text;
-                                               document.write("text");}</script>
-
-                                               
-                                    </div> -->
-
-
-
-                                    <form>Select datatype</form>
-                                    <select id="myList" onclick="datatypes()">
+                                    <select id="idMenu" onchange="datatypes(this)">
+                                        <option value="0">Select</option>
                                         <option value="1">Varchar</option>
                                         <option value="2">Int</option>
                                         <option value="3">String</option>
                                         <option value="4">Boolean</option>
-                                        <option value="5">CrimeCategory</option>
                                         </select>
-                                        <!--<p>You selected: <input type="text" id="datatype" size"20" color="black"></p>-->
-                                        <div id="message"></div>
- 
-                                  
+                            
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Latitude</td>
-                                    <td><!--<div class="dropdown">
-                                            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Datatypes
-                                            <span class="caret"></span></button>
-                                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                                                <li role="presentation"><a role="menuitem" href="#">Varchar</a></li>
-                                                <li role="presentation" class="divider"></li>
-                                                <li role="presentation"><a role="menuitem" href="#">Int</a></li>
-                                                <li role="presentation" class="divider"></li>
-                                                <li role="presentation"><a role="menuitem" href="#">String</a></li>
-                                                <li role="presentation" class="divider"></li>
-                                                <li role="presentation"><a role="menuitem" href="#">Boolean</a></li>
-                                                <li role="presentation" class="divider"></li>
-                                                <li role="presentation"><a role="menuitem" href="#">About Us</a></li>
-                                            </ul>
-                                    </div>-->
-                                        <!-- <div class="btn-group">
-                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select<span class="caret"></span>
-                                            </button>
-                                                <ul class="dropdown-menu">
-                                                <li><a href="javascript:void(0);">Varchar</a></li>
-                                                <li role="separator" class="divider"></li>
-                                                <li><a href="javascript:void(0);">Int</a></li>
-                                                <li role="separator" class="divider"></li>
-                                                <li><a href="javascript:void(0);">Decimal</a></li>
-                                                <li role="separator" class="divider"></li>
-                                                <li><a href="javascript:void(0);">Boolean</a></li>
-                                                <li role="separator" class="divider"></li>
-                                            
-                                        </ul>
-                                    </div>-->
-                                     <form>Select datatype</form>
-                                    <select id="myList" onchange="datatypes()">
-                                        <option>Varchar</option>
-                                        <option>Int</option>
-                                        <option>String</option>
-                                        <option>Boolean</option>
-                                        <option>CrimeCategory</option>
+                                    <td>
+                                     
+                                    <select id="latMenu" onchange="datatypes(this)">
+                                        <option value="0">Select</option>
+                                        <option value="1">Varchar</option>
+                                        <option value="2">Int</option>
+                                        <option value="3">String</option>
+                                        <option value="4">Boolean</option>
                                         </select>
-                                        <p>You selected: <input type="text" id="datatype" size"20" color="black"></p>
+                                       <!-- <p>You selected: <input type="text" id="datatype" size"20" color="black"></p>-->
  
                                     </td>
                                 <tr>
                                     <td>Longitude</td>
-                                    <td><!--<div class="dropdown">
-                                            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Datatypes
-                                            <span class="caret"></span></button>
-                                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                                                <li role="presentation"><a role="menuitem" href="#">Varchar</a></li>
-                                                <li role="presentation" class="divider"></li>
-                                                <li role="presentation"><a role="menuitem" href="#">Int</a></li>
-                                                <li role="presentation" class="divider"></li>
-                                                <li role="presentation"><a role="menuitem" href="#">String</a></li>
-                                                <li role="presentation" class="divider"></li>
-                                                <li role="presentation"><a role="menuitem" href="#">Boolean</a></li>
-                                                <li role="presentation" class="divider"></li>
-                                                <li role="presentation"><a role="menuitem" href="#">About Us</a></li>
-                                            </ul>
-                                    </div>-->
-                                    <!-- <div class="btn-group">
-                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select<span class="caret"></span>
-                                    </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="javascript:void(0);">Varchar</a></li>
-                                            <li role="separator" class="divider"></li>
-                                            <li><a href="javascript:void(0);">Int</a></li>
-                                            <li role="separator" class="divider"></li>
-                                            <li><a href="javascript:void(0);">Decimal</a></li>
-                                            <li role="separator" class="divider"></li>
-                                            <li><a href="javascript:void(0);">Boolean</a></li>
-                                            <li role="separator" class="divider"></li>
-                                            
-                                        </ul>
-                                    </div>-->
-                                     <form>Select datatype</form>
-                                    <select id="myList" onchange="datatypes()">
-                                        <option>Varchar</option>
-                                        <option>Int</option>
-                                        <option>String</option>
-                                        <option>Boolean</option>
-                                        <option>CrimeCategory</option>
+                                    <td>
+                                     
+                                    <select id="longMenu" onchange="datatypes(this)">
+                                        <option value="">Select</option>
+                                        <option value="1">Varchar</option>
+                                        <option value="2">Int</option>
+                                        <option value="3">String</option>
+                                        <option value="4">Boolean</option>
                                         </select>
                                     </td>
                                 <tr>
                                     <td>StreetName</td>
-                                    <td><!--<div class="dropdown">
-                                            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Datatypes
-                                            <span class="caret"></span></button>
-                                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                                                <li role="presentation"><a role="menuitem" href="#">Varchar</a></li>
-                                                <li role="presentation" class="divider"></li>
-                                                <li role="presentation"><a role="menuitem" href="#">Int</a></li>
-                                                <li role="presentation" class="divider"></li>
-                                                <li role="presentation"><a role="menuitem" href="#">String</a></li>
-                                                <li role="presentation" class="divider"></li>
-                                                <li role="presentation"><a role="menuitem" href="#">Boolean</a></li>
-                                                <li role="presentation" class="divider"></li>
-                                                <li role="presentation"><a role="menuitem" href="#">About Us</a></li>
-                                            </ul>
-                                    </div>-->
-                                     <!--<div class="btn-group">
-                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select<span class="caret"></span>
-                                    </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="javascript:void(0);">Varchar</a></li>
-                                            <li role="separator" class="divider"></li>
-                                            <li><a href="javascript:void(0);">Int</a></li>
-                                            <li role="separator" class="divider"></li>
-                                            <li><a href="javascript:void(0);">Decimal</a></li>
-                                            <li role="separator" class="divider"></li>
-                                            <li><a href="javascript:void(0);">Boolean</a></li>
-                                            <li role="separator" class="divider"></li>
-                                            
-                                        </ul>
-                                    </div>-->
-                                     <form>Select datatype</form>
-                                    <select id="myList" onchange="datatypes()">
-                                        <option>Varchar</option>
-                                        <option>Int</option>
-                                        <option>String</option>
-                                        <option>Boolean</option>
-                                        <option>CrimeCategory</option>
+                                    <td>
+                                     
+                                    <select id="streetMenu" onchange="datatypes(this)">
+                                        <option value="0">Select</option>
+                                        <option value="1">Varchar</option>
+                                        <option value="2">Int</option>
+                                        <option value="3">String</option>
+                                        <option value="4">Boolean</option>
+                                       
                                         </select>
                                     </td>
                                 </tr>
                                  <tr>
                                     <td>CrimeType</td>
-                                    <td><!--<div class="dropdown">
-                                            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Datatypes
-                                            <span class="caret"></span></button>
-                                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                                                <li role="presentation"><a role="menuitem" href="#">Varchar</a></li>
-                                                <li role="presentation" class="divider"></li>
-                                                <li role="presentation"><a role="menuitem" href="#">Int</a></li>
-                                                <li role="presentation" class="divider"></li>
-                                                <li role="presentation"><a role="menuitem" href="#">String</a></li>
-                                                <li role="presentation" class="divider"></li>
-                                                <li role="presentation"><a role="menuitem" href="#">Boolean</a></li>
-                                                <li role="presentation" class="divider"></li>
-                                                <li role="presentation"><a role="menuitem" href="#">About Us</a></li>
-                                            </ul>
-                                    </div>-->
-                                     <!--<div class="btn-group">
-                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select<span class="caret"></span>
-                                    </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="javascript:void(0);">Varchar</a></li>
-                                            <li role="separator" class="divider"></li>
-                                            <li><a href="javascript:void(0);">Int</a></li>
-                                            <li role="separator" class="divider"></li>
-                                            <li><a href="javascript:void(0);">Decimal</a></li>
-                                            <li role="separator" class="divider"></li>
-                                            <li><a href="javascript:void(0);">Boolean</a></li>
-                                            <li role="separator" class="divider"></li>
-                                            
-                                        </ul>
-                                    </div>-->
-                                     <form>Select datatype</form>
-                                    <select id="myList" onchange="datatypes()">
-                                        <option>Varchar</option>
-                                        <option>Int</option>
-                                        <option>String</option>
-                                        <option>Boolean</option>
-                                        <option>CrimeCategory</option>
+                                    <td>
+                                     
+                                    <select id="crimeMenu" onchange="datatypes(this)">
+                                        <option value ="">Select</option>
+                                        <option value="1">Varchar</option>
+                                        <option value="2">Int</option>
+                                        <option value="3">String</option>
+                                        <option value="4">Boolean</option>
+                                        
                                         </select>
                                     </td>
                                 </tr>
