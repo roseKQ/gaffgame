@@ -4,8 +4,10 @@ $( init );
  
 function init() {
  
-  // Hide the success message
+  // Hide the success message and correct message
   $('#successMessage').hide();
+  $('#correctMessage').hide();
+
   $('#successMessage').css( {
     left: '580px',
     top: '250px',
@@ -71,6 +73,8 @@ function handleCardDrop( event, ui ) {
  
   if ( correctCards == 4 ) {
     $('#successMessage').show();
+        $('#correctMessage').show();
+
     $('#successMessage').animate( {
       left: '380px',
       top: '200px',
