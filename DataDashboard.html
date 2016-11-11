@@ -29,6 +29,10 @@
     <!-- Theme CSS -->
     <link href="css/new-age.min.css" rel="stylesheet">
 
+    <link href='lib/leaflet/leaflet.css' rel='stylesheet'/>
+<script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -96,7 +100,15 @@
             </div>
         </div>
     </header>
-
+    <section id="map" class="contact bg-primary">
+        <div class="container">
+                          <h1>Map viz</h1>
+                            <div class="chart" id = "chart">
+                                <div id='map'></div>
+                            </div>
+                             
+        </div>
+    </section>
 
     <footer>
         <div class="container">
@@ -130,6 +142,10 @@ window.close("DataDashboard.html");} </script>
 
     <!-- Theme JavaScript -->
     <script src="js/new-age.min.js"></script>
+
+    <script src="data/playgrounds.js"></script>
+
+    <script src="map.js"></script>
 
 </body>
 
