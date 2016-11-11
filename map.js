@@ -1,6 +1,6 @@
 L.mapbox.accessToken = 'pk.eyJ1Ijoicm9zZWtxIiwiYSI6ImNpdmNhb3JrNzAwNWwyenBmMDN1a2g0NXAifQ.Cx7hjZVb009fCALAGxO6ng';
 var map = L.mapbox.map('map', 'mapbox.streets')
-    .setView([54.607868, -5.926437], 14);
+    .setView([54.607868, -5.926437], 16);
 
 var controlLayers = L.control.layers().addTo(map);
 //add some GeoJson for playgrounds
@@ -10,7 +10,7 @@ function playgroundMarker(feature, layer){
 
 var marker = new L.icon({iconUrl: "lib/leaflet/images/play_icon.png"});
 
-//layer.bindPopup(popupContent, popupOptions);
+layer.bindPopup(popupContent, popupOptions);
 layer.setIcon(marker);
 
 };
@@ -22,9 +22,9 @@ function schoolsMarker(feature, layer){
 
 var schoolsmarker = new L.icon({iconUrl: "lib/leaflet/images/school_icon.png"});
 
-//layer.bindPopup(popupContent, popupOptions);
+layer.bindPopup(popupContent, popupOptions);
 layer.setIcon(schoolsmarker);
-//controlLayers.addOverlay(schools, 'Schools');
+
 };
 
 // function crimeMarker(feature, layer){
