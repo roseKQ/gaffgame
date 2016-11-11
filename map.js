@@ -19,14 +19,14 @@ L.geoJson(playgrounds, {
 	onEachFeature: basementDweller
 }).addTo(map);
 
-// var popup = L.popup();
+var popup = L.popup();
 
-// function onMapClick(e, playgrounds) {
-//     popup
+ function onMapClick(e, playgrounds) {
+     popup
     
-//         .setLatLng(e.latlng)
-//         .setContent("You clicked the map at " + e.latlng.toString())
-//         .openOn(map);
-// }
+         .setLatLng(e.latlng)
+         .setContent("You clicked the map at " + e.latlng.toString())
+         .openOn(map);
+ }
 
-// map.on('click', onMapClick);
+ map.on('click', onMapClick);
