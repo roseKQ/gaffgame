@@ -2,31 +2,70 @@ L.mapbox.accessToken = 'pk.eyJ1Ijoicm9zZWtxIiwiYSI6ImNpdmNhb3JrNzAwNWwyenBmMDN1a
 var map = L.mapbox.map('map', 'mapbox.streets')
     .setView([54.607868, -5.926437], 14);
 
-
-
-//add some GeoJson
-function basementDweller(feature, layer){
+var controlLayers = L.control.layers().addTo(map);
+//add some GeoJson for playgrounds
+function playgroundMarker(feature, layer){
   var popupOptions = {width: 200};
   var popupContent = "This is some content";
-var marker = new L.icon({iconUrl: "lib/leaflet/images/marker-icon-2x.png"});
+
+var marker = new L.icon({iconUrl: "lib/leaflet/images/play_icon.png"});
 
 //layer.bindPopup(popupContent, popupOptions);
 layer.setIcon(marker);
 
 };
 
-L.geoJson(playgrounds, {
-	onEachFeature: basementDweller
+
+function schoolsMarker(feature, layer){
+  var popupOptions = {width: 200};
+  var popupContent = "This is some content";
+
+var schoolsmarker = new L.icon({iconUrl: "lib/leaflet/images/school_icon.png"});
+
+//layer.bindPopup(popupContent, popupOptions);
+layer.setIcon(schoolsmarker);
+//controlLayers.addOverlay(schools, 'Schools');
+};
+
+// function crimeMarker(feature, layer){
+//   var popupOptions = {width: 200};
+//   var popupContent = "This is some content";
+
+// var crimemarker = new L.icon({iconUrl: "lib/leaflet/images/marker-icon-2x.png"});
+
+// //layer.bindPopup(popupContent, popupOptions);
+// layer.setIcon(crimemarker);
+// //controlLayers.addOverlay(schools, 'Schools');
+// };
+var playground = L.geoJson(playgrounds, {
+	onEachFeature: playgroundMarker
+	
 }).addTo(map);
 
-var popup = L.popup();
 
- function onMapClick(e, playgrounds) {
-     popup
+var schools = L.geoJson(schools, {
+	onEachFeature: schoolsMarker
+	
+}).addTo(map);
+
+// var crime = L.geoJson(police, {
+// 	onEachFeature: crimeMarker
+	
+// }).addTo(map);
+
+controlLayers.addOverlay(playground, 'Children Playgrounds');
+controlLayers.addOverlay(schools, 'Schools');
+//controlLayers.addOverlay(crime, 'Crime');
+
+
+// var popup = L.popup();
+
+// function onMapClick(e, playgrounds) {
+//     popup
     
-         .setLatLng(e.latlng)
-         .setContent("You clicked the map at " + e.latlng.toString())
-         .openOn(map);
- }
+//         .setLatLng(e.latlng)
+//         .setContent("You clicked the map at " + e.latlng.toString())
+//         .openOn(map);
+// }
 
- map.on('click', onMapClick);
+// map.on('click', onMapClick);
