@@ -83,7 +83,8 @@
                         <div class="header-content-inner">
                             <h1>Datatypes</h1>
                             <p>You have chosen the crime dataset. Before this dataset can be used it needs to be cleansed.<br>
-                                Your job is to clean this entity by assigning the correct data types to each attribute.</p>
+                                Your job is to clean this <span class="hover"> <span style="color: black">entity </span><span class="tooltip">An entity is person, place or thing about which data can be stored</span></span> 
+                                by assigning the correct data types to each <span class="hover"> <span style="color: black">attribute </span><span class="tooltip">An attribute is a characteristic of an entity</span></span>.</p>
 
 
                             <a href="#dataTypes" class="btn btn-outline btn-xl page-scroll">next step </a>
@@ -112,85 +113,84 @@
         <div class="container">
             <div class="chart">
      <h1>Data Types Question</h1>
+     <h3>Please choose which datatype you think should be assigned to each database column name.</h3>
+     <p>Varchar is used to store characters.<br>
+     Int is used to store whole numbers e.g. 5, 23, 106<br>
+     Date is used to store dates<br>
+     Boolean is used to store TRUE or FALSE.<br>
+     Decimal is used to store numbers with decimal points e.g 4.5</p>
   
                             <table class="table">
                                 <tr>
-                                    <td>ID</td>
-                                    <td>
-
-                                   
-                                    <select id="idMenu" onchange="datatypes(this)">
-                                        <option value="0">Select</option>
-                                        <option value="1">Varchar</option>
-                                        <option value="2">Int</option>
-                                        <option value="3">String</option>
-                                        <option value="4">Boolean</option>
-                                        </select>
+                                <td><b>Column name</b></td>
+                                <td>ID</td>
+                                <td>Latitude</td>
+                                <td>IncidentDate</td>
+                                <td>StreetName</td>
+                                <td>CaseClosed?</td>
+                                
+                                </tr>
+                                <tr>
+                                <td><b>Datatypes</b></td>
+                                <td><select id="menu" onchange="datatypes(this, 2)">
+                                    <option value="0">Select</option>
+                                    <option value="1">Varchar</option>
+                                    <option value="2">Int</option>
+                                    <option value="3">Date</option>
+                                    <option value="4">Boolean</option>
+                                    <option value="5">Decimal</option>
+                                    </select></td>
+                                
+                                <td><select id="menu" onchange="datatypes(this, 5)">
+                                    <option value="0">Select</option>
+                                    <option value="1">Varchar</option>
+                                    <option value="2">Int</option>
+                                    <option value="3">Date</option>
+                                    <option value="4">Boolean</option>
+                                    <option value="5">Decimal</option>
+                                    </select></td>
+                               
+                                <td><select id="menu" onchange="datatypes(this, 3)">
+                                    <option value="">Select</option>
+                                    <option value="1">Varchar</option>
+                                    <option value="2">Int</option>
+                                    <option value="3">Date</option>
+                                    <option value="4">Boolean</option>
+                                    <option value="5">Decimal</option>
+                                    </select></td>
                             
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Latitude</td>
-                                    <td>
-                                     
-                                    <select id="latMenu" onchange="datatypes(this)">
-                                        <option value="0">Select</option>
-                                        <option value="1">Varchar</option>
-                                        <option value="2">Int</option>
-                                        <option value="3">String</option>
-                                        <option value="4">Boolean</option>
-                                        </select>
-                                       <!-- <p>You selected: <input type="text" id="datatype" size"20" color="black"></p>-->
- 
-                                    </td>
-                                <tr>
-                                    <td>Longitude</td>
-                                    <td>
-                                     
-                                    <select id="longMenu" onchange="datatypes(this)">
-                                        <option value="">Select</option>
-                                        <option value="1">Varchar</option>
-                                        <option value="2">Int</option>
-                                        <option value="3">String</option>
-                                        <option value="4">Boolean</option>
-                                        </select>
-                                    </td>
-                                <tr>
-                                    <td>StreetName</td>
-                                    <td>
-                                     
-                                    <select id="streetMenu" onchange="datatypes(this)">
-                                        <option value="0">Select</option>
-                                        <option value="1">Varchar</option>
-                                        <option value="2">Int</option>
-                                        <option value="3">String</option>
-                                        <option value="4">Boolean</option>
-                                       
-                                        </select>
-                                    </td>
-                                </tr>
-                                 <tr>
-                                    <td>CrimeType</td>
-                                    <td>
-                                     
-                                    <select id="crimeMenu" onchange="datatypes(this)">
-                                        <option value ="">Select</option>
-                                        <option value="1">Varchar</option>
-                                        <option value="2">Int</option>
-                                        <option value="3">String</option>
-                                        <option value="4">Boolean</option>
-                                        
-                                        </select>
-                                    </td>
+                                 <td><select id="menu" onchange="datatypes(this,1)">
+                                     <option value="0">Select</option>
+                                     <option value="1">Varchar</option>
+                                     <option value="2">Int</option>
+                                     <option value="3">Date</option>
+                                     <option value="4">Boolean</option>
+                                     <option value="5">Decimal</option>
+                                    </select></td>
+                        
+                                <td><select id="menu" onchange="datatypes(this, 4)">
+                                    <option value ="">Select</option>
+                                    <option value="1">Varchar</option>
+                                    <option value="2">Int</option>
+                                    <option value="3">Date</option>
+                                    <option value="4">Boolean</option>
+                                    <option value="5">Decimal</option>
+                                    </select> </td>
                                 </tr>
   
                             </table>
 
                                 <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0"
-                                     aria-valuemax="100" style="width:30%">30%
+                                <div class="progress-bar" id="myBar" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                                     aria-valuemax="100" style="width:0%">0%
                                 </div>
                             </div>
+                            
+
+
+                            <button type="submit" class="btn btn-default">Submit</button>
+
+
                             <a href="#download" class="btn btn-outline btn-xl" onclick="myFunction()">Next</a>  
 
 
