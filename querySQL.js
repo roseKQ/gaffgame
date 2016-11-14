@@ -1,4 +1,5 @@
 var correctCards = 0;
+var attempts = 0;
 
 $( init );
  
@@ -17,6 +18,7 @@ function init() {
  
   // Reset the game
   correctCards = 0;
+  attempts = 0;
   $('#cardPile').html( '' );
   $('#cardSlots').html( '' );
  
@@ -57,6 +59,17 @@ function handleCardDrop( event, ui ) {
   // on top of the slot, and prevent it being dragged
   // again
  
+
+  if ( slotNumber != cardNumber ) {
+    ui.draggable.addClass( 'incorrect' );
+    ui.draggable.draggable( 'disable' );
+    $(this).droppable( 'disable' );
+    ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
+    ui.draggable.draggable( 'option', 'revert', false );
+    console.log(correctCards);
+    attempts++;
+    moveProgressBar();
+  } 
   if ( slotNumber == cardNumber ) {
     ui.draggable.addClass( 'correct' );
     ui.draggable.draggable( 'disable' );
@@ -64,25 +77,37 @@ function handleCardDrop( event, ui ) {
     ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
     ui.draggable.draggable( 'option', 'revert', false );
     correctCards++;
+    attempts++;
     console.log(correctCards);
     moveProgressBar();
   } 
+
+  
    
   // If all the cards have been placed correctly then display a message
   // and reset the cards for another go
- 
+  if(attempts==4){
+  switch (correctCards) {
+    case 0:
+      $('#correctMessage').html('<h2>'+correctCards+'/4, Need to revise!</h2>').show();
+        break;
+    case 1:
+        $('#correctMessage').html('<h2>'+correctCards+'/4, Keep working on it!</h2>').show();
+        break;
+    case 2:
+        $('#correctMessage').html('<h2>'+correctCards+'/4, Not bad!</h2>').show();
+        break;
+    case 3:
+        $('#correctMessage').html('<h2>'+correctCards+'/4, Nearly there!</h2').show();
+        break;
+    case 4:
+        $('#correctMessage').html('<h2>'+correctCards+'/4, Perfect!</h2>').show();
+        break;
+}
+
+ }
   if ( correctCards == 4 ) {
     $('#successMessage').show();
-        $('#correctMessage').show();
-
-    $('#successMessage').animate( {
-      left: '380px',
-      top: '200px',
-      width: '400px',
-      height: '100px',
-      opacity: 1
-      
-    } );
   }
 
   function moveProgressBar() {

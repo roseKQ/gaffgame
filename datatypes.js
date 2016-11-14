@@ -1,13 +1,13 @@
 var score=0;
 
-
-function datatypes(menu, correct){
+function datatypes(menu, correct, questionNumber){
 
 
 
     var selection=menu.options[menu.selectedIndex].text;
     var correctAnswer = menu.options[menu.Index = correct].text;
     var isCorrect = false;
+   
    // var correctAnswer = document.getElementById("menu").selectedIndex.text = correct;
    
    // var score = 0;
@@ -20,6 +20,8 @@ function datatypes(menu, correct){
     //console.log(correctValue);
 
    
+
+
    
   
     if(selection == correctAnswer){
@@ -27,19 +29,23 @@ function datatypes(menu, correct){
       console.log(isCorrect);
       score += 1;
       console.log(score);
-      move();
+     
+      //move();
+      
+     $('.progress-bar').css('width', 40 + '%');
+   
     }else{
       score=score;
       console.log(isCorrect);
       console.log(score);
-      
-      move();
-    }
+    $('.progress-bar').css('width', 40 + '%');
+    // move();
     
-    }
+    
+  }
 
 
-    function move() {
+    /*function move() {
     var elem = document.getElementById("myBar"); 
     var width = 1;
     var id = setInterval(frame, 10);
@@ -47,10 +53,11 @@ function datatypes(menu, correct){
         if (width >= 100) {
             clearInterval(id);
         } else {
-            width++; 
-            elem.style.width = width + '%'; 
+            $('.progress-bar').css('width', 20 + '%');
+    
         }
     }
-}
+}*/
 
+}
 
