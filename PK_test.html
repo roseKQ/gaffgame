@@ -38,7 +38,7 @@
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  
+  <script src="PK_test.js"></script>
     
     
 
@@ -82,11 +82,11 @@
                 <div class="col-sm-7">
                     <div class="header-content">
                         <div class="header-content-inner">
-                            <h1>SQL queries</h1>
-                            <p>Lets get started with tidying up the dataset!</p>
-                                <p>Create a simple statement to SELECT the first column of the table. Move the words into the right order. </p>
+                            <h1>Primary Keys</h1>
+                            <p>Stuff about primary keys</p>
+                                <p>More stuff about primary keys </p>
 
-                               <a href="#cardGame" class="btn btn-outline btn-xl page-scroll">next step </a> 
+                               <a href="#primaryKeys" class="btn btn-outline btn-xl page-scroll">next step </a> 
                     
                     </div>
                 </div></div>
@@ -98,7 +98,7 @@
                                 <div class="screen">
                                     <br><br><br><br>
                                     <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                                    <img src="img/DBtable-01.png" class="img-responsive" alt="">
+                                    <img src="img/key-01.png" class="img-responsive" alt="">
                                 </div>
 
                             </div>
@@ -108,29 +108,55 @@
         </div>
     </header>
 
-    <section id="cardGame" class="contact bg-primary">
-        <div class="container">
-     <h1>Create a query to view the data from the crime table.</h1>
-    <div class="chart">
-	<div id="cardPile"> </div>
-	<div id="cardSlots"> </div>
-    <div id="correctMessage" >
-		<h2>Well done, that's correct!</h2>
-	</div>
-    <div class="progress">
-    <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" >100%</div>
-    <div id="successMessage" >
-		<h2>You did it!</h2>
-		<button onclick="init()">Play Again</button>
-	</div>
-    </div>
-            <a href="" id="emnbutton"" class="btn btn-outline btn-xl" onclick="myFunction()" >Next</a>
+    <section id="primaryKeys" class="contact bg-primary">
+       <div class="chart"> <div class="container">
+        
+<div id="drop_zone" class="dropzone" ondragenter="drag_enter(event)" ondrop="drag_drop(event)" 
+    ondragover="return false" ondragleave="drag_leave(event)">
+        <img id="column_id" class="database_columns" src="img/id_column.png" width="90px" height="150px">
+</div>
+<div id="drop_zone1" class="dropzone1" ondragenter="drag_enter(event)" ondrop="drag_drop(event)"
+    ondragover="return false" ondragleave="drag_leave(event)">
+        <img id="column_month" class="database_columns" src="img/month_column.png" width="90px" height="150px">
+</div>
+<div id="drop_zone2" class="dropzone2" ondragenter="drag_enter(event)" ondrop="drag_drop(event)"
+    ondragover="return false" ondragleave="drag_leave(event)">
+        <img id="column_longitude" class="database_columns" src="img/longitude_column.png" width="90px" height="150px">
+</div>
+<div id="drop_zone3" class="dropzone3" ondragenter="drag_enter(event)" ondrop="drag_drop(event)"
+    ondragover="return false" ondragleave="drag_leave(event)">
+        <img id="column_latitude" class="database_columns" src="img/latitude_column.png" width="90px" height="150px">
+</div>
+<div id="drop_zone4" class="dropzone4" ondragenter="drag_enter(event)" ondrop="drag_drop(event)"
+    ondragover="return false" ondragleave="drag_leave(event)">
+        <img id="column_crime_type" class="database_columns" src="img/crime_type_column.png" width="90px" height="150px">
+</div>
+            
 
-    </div>
+                        <div id="object1" class="objects" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)">
+                            <img id="crimepk" src="img/primarykey.png" alt="Primary Key icon" width="30" height="40">
+                        </div>
+                        <div id="object2" class="objects" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)">
+                            <img id="crimiefk" src="img/foreignkey.png" alt="Primary Key icon" width="30" height="40">
+                        </div>
+                        <div id="object3" class="objects" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)">
+                            <img id="schoolpk" src="img/primarykey.png" alt="Primary Key icon" width="30" height="40">
+                        </div>
+                        <div id="object4" class="objects" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)">
+                            <img id="schoolfk" src="img/foreignkey.png" alt="Primary Key icon" width="30" height="40">
+                        </div>
+                        <div id="object3" class="objects" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)">
+                            <img id="parkpk" src="img/primarykey.png" alt="Primary Key icon" width="30" height="40">
+                        </div>
+
+                        <button class="btn btn-outline btn-xl" >Next Question</button>
+                        <a href="" id="nextPage" class="btn btn-outline btn-xl" onclick="myFunction()">Next</a>
+                        
 
 
 
-        </div><script src="querySQL.js"></script>
+
+       </div></div><script src="PK_test_2.js"></script>
     </section>
 
     <footer>

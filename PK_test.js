@@ -1,93 +1,37 @@
-var correctCards = 0;
 
-$( init );
- 
-function init() {
- 
-  // Hide the success message and correct message
-  $('#successMessage').hide();
-  $('#correctMessage').hide();
-
-  $('#successMessage').css( {
-    left: '580px',
-    top: '250px',
-    width: 0,
-    height: 0
-  } );
- 
-  // Reset the game
-  correctCards = 0;
-  $('#cardPile').html( '' );
-  $('#cardSlots').html( '' );
- 
-  // Create the pile of shuffled cards
-  var numbers = [ "Select", "*", "From", "Crime", "Delete", "Drop", "Remove", "Sort", "drop", "Delete" ];
-  
- 
-  for ( var i=0; i<10; i++ ) {
-    console.log(numbers[1]);
-    $('<div>' + numbers[i] + '</div>').data( 'number', numbers[i] ).attr( 'id', 'card'+numbers[i] ).appendTo( '#cardPile' ).draggable( {
-      containment: '#header-content-inner',
-      stack: '#cardPile div',
-      cursor: 'move',
-      revert: true
-    } );
-  }
- 
-  // Create the card slots
-  var words = [ "Select", "*", "From", "Crime" ];
-  for ( var i=1; i<=4; i++ ) {
-    $('<div>' + words[i-1] + '</div>').data( 'number', words[i-1] ).appendTo( '#cardSlots' ).droppable( {
-      accept: '#cardPile div',
-      hoverClass: 'hovered',
-      drop: handleCardDrop
-    } );
-  }
- 
+function _(id){
+   return document.getElementById(id);	
 }
-
-function handleCardDrop( event, ui ) {
-  var slotNumber = $(this).data( 'number' );
-  console.log($(this).data( 'number' ));
-  var cardNumber = ui.draggable.data( 'number' );
-  console.log(ui.draggable.data( 'number' ));
- 
-  // If the card was dropped to the correct slot,
-  // change the card colour, position it directly
-  // on top of the slot, and prevent it being dragged
-  // again
- 
-  if ( slotNumber == cardNumber ) {
-    ui.draggable.addClass( 'correct' );
-    ui.draggable.draggable( 'disable' );
-    $(this).droppable( 'disable' );
-    ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
-    ui.draggable.draggable( 'option', 'revert', false );
-    correctCards++;
-    console.log(correctCards);
-    moveProgressBar();
-  } 
-   
-  // If all the cards have been placed correctly then display a message
-  // and reset the cards for another go
- 
-  if ( correctCards == 4 ) {
-    $('#successMessage').show();
-        $('#correctMessage').show();
-
-    $('#successMessage').animate( {
-      left: '380px',
-      top: '200px',
-      width: '400px',
-      height: '100px',
-      opacity: 1
-      
-    } );
-  }
-
-  function moveProgressBar() {
-    var progress = correctCards;
-    
-  }
-
+var droppedIn = false;
+function drag_start(event) {
+    _('app_status').innerHTML = "You are dragging object"+event.target.getAttribute('id');
+    event.dataTransfer.dropEffect = "move";
+    event.dataTransfer.setData("text", event.target.getAttribute('id') );
+}
+function drag_enter(event) {
+    _('app_status').innerHTML = "You are dragging object "+event.target.getAttribute('id');
+}
+function drag_leave(event) {
+    _('app_status').innerHTML = "You are dragging object "+event.target.getAttribute('id');
+}
+function drag_drop(event) {
+    event.preventDefault(); /* Prevent undesirable default behavior while dropping */
+    var elem_id = event.dataTransfer.getData("text");
+    event.target.appendChild( _(elem_id) );
+    _('app_status').innerHTML = "Dropped "+elem_id+" into the "+event.target.getAttribute('id');
+    _(elem_id).removeAttribute("draggable");
+    _(elem_id).style.cursor = "default";
+    droppedIn = true;
+}
+function drag_end(event) {
+    if(droppedIn == false){
+        _('app_status').innerHTML = "You are dragging object "+event.target.getAttribute('id')+" go.";
+    }
+	droppedIn = false;
+}
+function readDropZone(){
+    for(var i=0; i < _("drop_zone").children.length; i++){
+        alert(_("drop_zone").children[i].id+" is in the drop zone");
+    }
+    // Run Ajax request to pass any data to your server */
 }
