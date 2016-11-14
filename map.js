@@ -1,6 +1,6 @@
 L.mapbox.accessToken = 'pk.eyJ1Ijoicm9zZWtxIiwiYSI6ImNpdmNhb3JrNzAwNWwyenBmMDN1a2g0NXAifQ.Cx7hjZVb009fCALAGxO6ng';
 var map = L.mapbox.map('map', 'mapbox.streets')
-    .setView([54.607868, -5.926437], 13);
+    .setView([54.607868, -5.926437], 15);
 
 var controlLayers = L.control.layers().addTo(map);
 //add some GeoJson for playgrounds
