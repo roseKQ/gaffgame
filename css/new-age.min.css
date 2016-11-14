@@ -64,7 +64,7 @@ box-shadow: 10px 10px 5px #888888;}
  
 /* Header/footer boxes */
  
-/*.wideBox {
+.wideBox {
   clear: both;
   text-align: center;
   margin: 70px;
@@ -78,7 +78,7 @@ box-shadow: 10px 10px 5px #888888;}
   margin: 20px;
   color: #666;
   font-size: 1.5em;
-}*/
+}
  
 /* Slots for final card positions */
  
