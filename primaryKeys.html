@@ -7,126 +7,7 @@
 
 <!--this is all my code that needs reorganised-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<style>
-    .{
-    margin: 0;
-    padding: 0;
-}
 
-#pop_background{
-    position:fixed;
-    width: 100%;
-    height: 900px;
-    top: 0;
-    left:0;
-    background: #000;
-    opacity: .8;
-    z-index: 1000;
-    cursor: pointer;
-    display: none;
-}
-
-#pop_box{
-    position: absolute;
-    background: #fff;
-    width: 30%;
-    margin: 100px 0 0 35%;
-    padding: 20px;
-    z-index: 1500;
-    display: none;
-}
-
-#close{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: 1px solid #999;
-    text-align: center;
-    line-height: 30px;
-    font-size: 30px;
-    float:right;
-}
-</style>
-<style>
-.objects {
-    display:inline-block;
-    background-color: #FFF3CC;
-    border: #DFBC6A 1px solid;
-    width: 50px; 
-    height: 50px;
-    margin: 10px;
-    padding: 8px;
-    font-size: 18px;
-    text-align: center;
-    box-shadow: 2px 2px 2px #999;
-    cursor: move;
-}
-.database_columns{
-    text-align: center;
-    position: absolute;
-    bottom: 15px;
-}
-#wrapper{
-    width: 800px;
-    height: 400px;
-    padding: 8px;
-}
-#drop_zone {
-    background-color: #FFF3CC;
-    border: #999 1px solid;
-    width: 120px; 
-    height: 220px;
-    padding: 8px;
-    font-size: 18px;
-    float:left;
-    position: absolute;
-    right: 600px;
-}
-#drop_zone1 {
-    background-color: #FFF3CC; 
-    border: #999 1px solid;
-    width: 120px; 
-    height: 220px;
-    padding: 8px;
-    font-size: 18px;
-    float:left;
-    position: absolute;
-    right: 500px;
-}
-#drop_zone2 {
-    background-color: #FFF3CC; 
-    border: #999 1px solid;
-    width: 120px; 
-    height: 220px;
-    padding: 8px;
-    font-size: 18px;
-    float:left;
-    position: absolute;
-    right: 400px;
-}
-#drop_zone3 {
-    background-color: #FFF3CC; 
-    border: #999 1px solid;
-    width: 120px; 
-    height: 220px;
-    padding: 8px;
-    font-size: 18px;
-    float:left;
-    position: absolute;
-    right: 300px;
-}
-#drop_zone4 {
-    background-color: #FFF3CC; 
-    border: #999 1px solid;
-    width: 120px; 
-    height: 220px;
-    padding: 8px;
-    font-size: 18px;
-    float:left;
-    position: absolute;
-    right: 200px;
-}
-</style>
 <script>
 function _(id){
    return document.getElementById(id);	
@@ -238,12 +119,30 @@ function readDropZone(){
         <div class="container">
             <div class="row">
                 <div class="col-sm-7">
-                    <div class="header-content">
-                        <div class="header-content-inner">
+                    
+
+                <div class="col-sm-5">
+                            <div class="device-container">
+                                <div ></div>
+                                <div class="screen">
+                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                                    <img src="img/icon-01.png" class="img-responsive" alt="">
+                                </div>
+                            </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+        <section id="primaryKey" class="contact bg-primary">
+        <div class="container">
+                          
+                            <div class="chart" id = "chart2">
 <div id="wrapper" class="container-fluid">
 
+
     <p>Your task is to put the primary key or foreign key into the correct columns</p>
-        <h2 id="app_status">Crime Database for Belfast</h2>
+        <h2 id="app_status" style="opacity: 0;"></h2>
         
 <div id="drop_zone" class="dropzone" ondragenter="drag_enter(event)" ondrop="drag_drop(event)" 
     ondragover="return false" ondragleave="drag_leave(event)">
@@ -264,9 +163,9 @@ function readDropZone(){
 <div id="drop_zone4" class="dropzone4" ondragenter="drag_enter(event)" ondrop="drag_drop(event)"
     ondragover="return false" ondragleave="drag_leave(event)">
         <img id="column_crime_type" class="database_columns" src="img/crime_type_column.png" width="90px" height="150px">
-</div>
+</div></div>
             
-</div>
+<div class="key_container">
                         <div id="object1" class="objects" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)">
                             <img id="crimepk" src="img/primarykey.png" alt="Primary Key icon" width="30" height="40">
                         </div>
@@ -282,35 +181,12 @@ function readDropZone(){
                         <div id="object3" class="objects" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)">
                             <img id="parkpk" src="img/primarykey.png" alt="Primary Key icon" width="30" height="40">
                         </div>
-
+</div>
                         <button class="btn btn-outline btn-xl" style="color:red">Next Question</button>
                         <a href="" id="nextPage" class="btn btn-outline btn-xl" onclick="myFunction()">Next</a>
                         
-                        </div><!-- header-content-inner -->
-                    </div>
 
-                <div class="col-sm-5">
-                            <div class="device-container">
-                                <div ></div>
-                                <div class="screen">
-                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                                    <img src="img/icon-01.png" class="img-responsive" alt="">
-                                </div>
-                            </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-        <section id="primaryKey" class="contact bg-primary">
-        <div class="container">
-                          
-                            <div class="chart" id = "chart2">
-
-
-                                
-                            </div>
-                             
+         </div>                    
         </div>
     </section>
 
