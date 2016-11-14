@@ -407,8 +407,10 @@ footer ul li a.active {
 }
 .btn-outline {
   color: white;
-  border-color: white;
+  border-color: #888889;
   border: 1px solid;
+  
+  
 }
 .btn-outline:hover,
 .btn-outline:focus,
@@ -427,7 +429,9 @@ footer ul li a.active {
 .btn-xl {
   padding: 15px 45px;
   font-size: 11px;
+   
 }
+
 ::-moz-selection {
   color: white;
   text-shadow: none;
