@@ -42,8 +42,8 @@
     
     
 
-
 </head>
+
 
 <body id="page-top">
 
@@ -82,9 +82,9 @@
                 <div class="col-sm-7">
                     <div class="header-content">
                         <div class="header-content-inner">
-                            <h1>Primary Keys</h1>
-                            <p>Stuff about primary keys</p>
-                                <p>More stuff about primary keys </p>
+                            <h1>Primary Keys, Foreign Keys, Composite Keys.</h1>
+                            <p>We use keys to create relationships between tables in a database. This makes it easier to retrieve records from the database tables.</p>
+                                <p>There are a number of different types. In this section, we will be learning how to use Primary Keys, Foreign Keys and Composite Keys. </p>
 
                                <a href="#primaryKeys" class="btn btn-outline btn-xl page-scroll">next step </a> 
                     
@@ -109,29 +109,38 @@
     </header>
 
     <section id="primaryKey" class="contact bg-primary">
-        <div class="container">
-     <h1>Identify which column whether a column is a primary key or a foreign key</h1>
-    <div class="chart">
+    
+    <div class="container">
+        <div class="chart">
+    <h1>Identify the columns below that could potentially be used as a <span class="hover"> <span style="color: black">Primary Key </span><span class="tooltip">A primary key uniquely identifies each record in a database table. They must contain unique values. Each table can have only ONE primary key.</span></span>,
+    <span class="hover"> <span style="color: black">Composite Key </span><span class="tooltip">A composite key is a combination of two or more columns in a table that can be used to uniquely identify each row.</span>
+    </span> or <span class="hover"> <span style="color: black">Foreign Key </span><span class="tooltip">A foreign key points to a primary key in another table.</span></span></h1>
+   
+    
 	<div id="cardPile"> </div>
 	<div id="cardSlots"> </div>
-    <div id="correctMessage" >
+    <table id="sqlTable">
+       <tr><img src="img/PK_table-01.png" alt="table" width="700"</img></tr>
+       <table>
+    <!--<div id="correctMessage" >
 		<h2>Well done, that's correct!</h2>
-	</div>
+	</div>-->
     <div class="progress">
     <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" >100%</div>
-    <div id="successMessage" >
+    <!--<div id="successMessage" >
 		<h2>You did it!</h2>
-		<button onclick="init()">Play Again</button>
+		<button onclick="init()">Play Again</button>-->
 	</div>
+
     </div>
             <a href="" id="emnbutton" class="btn btn-outline btn-xl" onclick="myFunction()">Next</a>
 
     </div>
-    </div>
-    <script src="PK_test.js"></script>
+    
+    
     </section>
 
-    <footer>
+    <!--<footer>
         <div class="container">
             <p>&copy; 2016 Gaff Game. All Rights Reserved.</p>
             <ul class="list-inline">
@@ -146,12 +155,13 @@
                 </li>
             </ul>
         </div>
-    </footer>
+    </footer>-->
 
 <script>
 
-function myFunction() { window.open("Scoreboard.html");
-window.close("queriesSQL.html");} </script>
+function myFunction() { window.open("queriesSQL.html");
+window.close("PK_test.html");} </script>
+<script src="PK_test.js"></script>
 
     <!-- jQuery 
     <script src="vendor/jquery/jquery.min.js"></script>-->

@@ -5,7 +5,7 @@ $( init );
 function init() {
  
   // Hide the success message and correct message
-  $('#successMessage').hide();
+  /*$('#successMessage').hide();
   $('#correctMessage').hide();
 
   $('#successMessage').css( {
@@ -13,15 +13,16 @@ function init() {
     top: '250px',
     width: 0,
     height: 0
-  } );
+  } );*/
  
   // Reset the game
   correctCards = 0;
   $('#cardPile').html( '' );
   $('#cardSlots').html( '' );
+  
  
   // Create the pile of shuffled cards
-  var numbers = [ "Primary Key", "Foreign Key", "Primary Key", "Foreign Key", "Primary Key"];
+  var numbers = [ "Composite Key", "Foreign Key", "Composite Key", "Composite Key", "Primary Key"];
   
  
   for ( var i=0; i<5; i++ ) {
@@ -35,7 +36,7 @@ function init() {
   }
  
   // Create the card slots
-  var words = [ "Primary Key", "Foreign Key", "Primary Key", "Foreign Key", "Primary Key" ];
+  var words = [ "Primary Key", "Composite Key", "Foreign Key", "Composite Key", "Composite Key" ];
   for ( var i=1; i<=5; i++ ) {
     $('<div>' + words[i-1] + '</div>').data( 'number', words[i-1] ).appendTo( '#cardSlots' ).droppable( {
       accept: '#cardPile div',
@@ -45,6 +46,7 @@ function init() {
   }
  
 }
+
 
 function handleCardDrop( event, ui ) {
   var slotNumber = $(this).data( 'number' );
@@ -71,7 +73,7 @@ function handleCardDrop( event, ui ) {
   // If all the cards have been placed correctly then display a message
   // and reset the cards for another go
  
-  if ( correctCards == 4 ) {
+  /*if ( correctCards == 5 ) {
     $('#successMessage').show();
         $('#correctMessage').show();
 
@@ -83,7 +85,7 @@ function handleCardDrop( event, ui ) {
       opacity: 1
       
     } );
-  }
+     }*/
 
   function moveProgressBar() {
     var progress = correctCards;
