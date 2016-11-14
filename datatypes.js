@@ -1,48 +1,44 @@
 var score=0;
+var attempts=0;
 
-function datatypes(menu, correct, questionNumber){
-
+function datatypes(menu, correct){
 
 
     var selection=menu.options[menu.selectedIndex].text;
     var correctAnswer = menu.options[menu.Index = correct].text;
     var isCorrect = false;
    
-   // var correctAnswer = document.getElementById("menu").selectedIndex.text = correct;
-   
-   // var score = 0;
-    //var noOfQuestions = 5;
-
-   console.log(selection);
+    console.log(selection);
     console.log(isCorrect);
     console.log(correctAnswer);
-    //console.log(selectedValue);
-    //console.log(correctValue);
-
-   
-
-
-   
+     
   
     if(selection == correctAnswer){
       isCorrect=true;
       console.log(isCorrect);
       score += 1;
+      attempts+=1;
       console.log(score);
      
       //move();
       
      $('.progress-bar').css('width', 40 + '%');
-   
+    //$('#displayScore').html('<h2> Your score is' +score+'/5</h2>').show();
     }else{
       score=score;
       console.log(isCorrect);
       console.log(score);
+      attempts+=1
     $('.progress-bar').css('width', 40 + '%');
     // move();
     
-    
+   
   }
+  
+  
+  
+
+  
 
 
     /*function move() {
@@ -58,6 +54,11 @@ function datatypes(menu, correct, questionNumber){
         }
     }
 }*/
-
+if(attempts == 5){
+       $('#displayScore').html('<h2> You got ' +score+ ' correct.</h2>').show();
+    }
 }
+
+ 
+
 
