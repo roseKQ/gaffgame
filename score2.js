@@ -53,13 +53,13 @@ console.log(sum);
       .attr("x", 565)
       .attr("y", 400)
       .text(function (d) { 
-       if(sum <= 5){
+       if(sum <= 4){
         return "It's a Bronze..you scored " +sum ;
       }
-      else if(sum <= 10){
+      else if(sum <= 8){
             return "Silver medal! You scored " +sum;
       }
-        else if(sum <= 15){
+        else if(sum <= 12){
           return "You got a gold! You scored " +sum;
         }
               else{

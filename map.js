@@ -8,7 +8,7 @@ function playgroundMarker(feature, layer){
   var popupOptions = {width: 200};
   var popupContent = "This is some content";
 
-var marker = new L.icon({iconUrl: "lib/leaflet/images/play_icon.png"});
+var marker = new L.icon({iconUrl: "lib/leaflet/images/slide.png"});
 
 layer.bindPopup(popupContent, popupOptions);
 layer.setIcon(marker);
