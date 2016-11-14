@@ -34,12 +34,6 @@ function datatypes(menu, correct){
     
    
   }
-  
-  
-  
-
-  
-
 
     /*function move() {
     var elem = document.getElementById("myBar"); 
@@ -55,7 +49,7 @@ function datatypes(menu, correct){
     }
 }*/
 if(attempts == 5){
-       $('#displayScore').html('<h2> You got ' +score+ ' correct.</h2>').show();
+       $('#displayScore').html('<h2> You got ' +score+ ' correct!</h2>').show();
     }
 }
 
