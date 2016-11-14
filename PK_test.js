@@ -5,7 +5,7 @@ $( init );
 function init() {
  
   // Hide the success message and correct message
-  $('#successMessage').hide();
+  /*$('#successMessage').hide();
   $('#correctMessage').hide();
 
   $('#successMessage').css( {
@@ -13,7 +13,7 @@ function init() {
     top: '250px',
     width: 0,
     height: 0
-  } );
+  } );*/
  
   // Reset the game
   correctCards = 0;
@@ -73,7 +73,7 @@ function handleCardDrop( event, ui ) {
   // If all the cards have been placed correctly then display a message
   // and reset the cards for another go
  
-  if ( correctCards == 5 ) {
+  /*if ( correctCards == 5 ) {
     $('#successMessage').show();
         $('#correctMessage').show();
 
@@ -85,7 +85,7 @@ function handleCardDrop( event, ui ) {
       opacity: 1
       
     } );
-  }
+     }*/
 
   function moveProgressBar() {
     var progress = correctCards;
