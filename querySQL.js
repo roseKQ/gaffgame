@@ -68,7 +68,7 @@ function handleCardDrop( event, ui ) {
     ui.draggable.draggable( 'option', 'revert', false );
     console.log(correctCards);
     attempts++;
-    moveProgressBar();
+   
   } 
   if ( slotNumber == cardNumber ) {
     ui.draggable.addClass( 'correct' );
@@ -79,7 +79,7 @@ function handleCardDrop( event, ui ) {
     correctCards++;
     attempts++;
     console.log(correctCards);
-    moveProgressBar();
+   
   } 
 
   
@@ -110,9 +110,6 @@ function handleCardDrop( event, ui ) {
     $('#successMessage').show();
   }
 
-  function moveProgressBar() {
-    var progress = correctCards;
-    
-  }
+  
 
 }
