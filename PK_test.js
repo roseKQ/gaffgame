@@ -1,11 +1,12 @@
 var correctCards = 0;
+var attempts = 0;
 
 $( init );
  
 function init() {
  
   // Hide the success message and correct message
-  /*$('#successMessage').hide();
+  $('#successMessage').hide();
   $('#correctMessage').hide();
 
   $('#successMessage').css( {
@@ -13,10 +14,11 @@ function init() {
     top: '250px',
     width: 0,
     height: 0
-  } );*/
+  } );
  
   // Reset the game
   correctCards = 0;
+  attempts=0;
   $('#cardPile').html( '' );
   $('#cardSlots').html( '' );
   
@@ -58,6 +60,16 @@ function handleCardDrop( event, ui ) {
   // change the card colour, position it directly
   // on top of the slot, and prevent it being dragged
   // again
+   if ( slotNumber != cardNumber ) {
+    ui.draggable.addClass( 'incorrect' );
+    ui.draggable.draggable( 'disable' );
+    $(this).droppable( 'disable' );
+    ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
+    ui.draggable.draggable( 'option', 'revert', false );
+    console.log(correctCards);
+    attempts++;
+   
+  } 
  
   if ( slotNumber == cardNumber ) {
     ui.draggable.addClass( 'correct' );
@@ -67,13 +79,13 @@ function handleCardDrop( event, ui ) {
     ui.draggable.draggable( 'option', 'revert', false );
     correctCards++;
     console.log(correctCards);
-    moveProgressBar();
+    attempts++;
   } 
    
   // If all the cards have been placed correctly then display a message
   // and reset the cards for another go
  
-  /*if ( correctCards == 5 ) {
+  if ( correctCards == 5 ) {
     $('#successMessage').show();
         $('#correctMessage').show();
 
@@ -85,11 +97,8 @@ function handleCardDrop( event, ui ) {
       opacity: 1
       
     } );
-     }*/
+     }
 
-  function moveProgressBar() {
-    var progress = correctCards;
-    
-  }
+ 
 
 }
