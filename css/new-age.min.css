@@ -26,8 +26,9 @@ box-shadow: 10px 10px 5px #888888;}
     }
 
 .tooltip {
-  top:-15px;
-  width:100px;
+  top:-125px;
+  left:30px;
+  width:175px;
   position:absolute;
   background-color:#6b9aff;
   color:white;
@@ -38,12 +39,12 @@ box-shadow: 10px 10px 5px #888888;}
   -ms-transition: opacity 0.5s;
   -o-transition:  opacity 0.5s;
   transition:  opacity 0.5s;
-  line-height: 100%;
-  width: 100px;
-  height: 100px;
+  line-height: 1.2;
+  
+  height: 160px;
   padding:8px;
   font-family:Lato,Helvetica,Arial,sans-serif;
-  font-size: 12px;
+  font-size: 16px;
   
 }
 
