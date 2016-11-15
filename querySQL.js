@@ -106,9 +106,9 @@ function handleCardDrop( event, ui ) {
 }
 
  }
-  if ( correctCards == 4 ) {
+  /*if ( correctCards == 4 ) {
     $('#successMessage').show();
-  }
+  }*/
 
   
 

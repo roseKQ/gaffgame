@@ -60,6 +60,18 @@ function handleCardDrop( event, ui ) {
   // change the card colour, position it directly
   // on top of the slot, and prevent it being dragged
   // again
+  
+ 
+  if( slotNumber == cardNumber ) {
+    ui.draggable.addClass( 'correct' );
+    ui.draggable.draggable( 'disable' );
+    $(this).droppable( 'disable' );
+    ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
+    ui.draggable.draggable( 'option', 'revert', false );
+    correctCards++;
+    console.log(correctCards);
+    attempts++;
+  } 
    if ( slotNumber != cardNumber ) {
     ui.draggable.addClass( 'incorrect' );
     ui.draggable.draggable( 'disable' );
@@ -70,18 +82,8 @@ function handleCardDrop( event, ui ) {
     attempts++;
    
   } 
- 
-  if ( slotNumber == cardNumber ) {
-    ui.draggable.addClass( 'correct' );
-    ui.draggable.draggable( 'disable' );
-    $(this).droppable( 'disable' );
-    ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
-    ui.draggable.draggable( 'option', 'revert', false );
-    correctCards++;
-    console.log(correctCards);
-    attempts++;
-  } 
-   
+  
+  
   // If all the cards have been placed correctly then display a message
   // and reset the cards for another go
  
