@@ -4,6 +4,8 @@ var map = L.mapbox.map('map', 'mapbox.streets')
 
 var controlLayers = L.control.layers().addTo(map);
 //add some GeoJson for playgrounds
+
+
 function playgroundMarker(feature, layer){
   var popupOptions = {width: 200};
   var popupContent = "This is some content";
@@ -27,16 +29,16 @@ layer.setIcon(schoolsmarker);
 
 };
 
-// function crimeMarker(feature, layer){
-//   var popupOptions = {width: 200};
-//   var popupContent = "This is some content";
+ function crimeMarker(feature, layer){
+   var popupOptions = {width: 200};
+   var popupContent = "This is some content";
 
-// var crimemarker = new L.icon({iconUrl: "lib/leaflet/images/marker-icon-2x.png"});
+ var crimemarker = new L.icon({iconUrl: "lib/leaflet/images/crime_icon.png"});
 
-// //layer.bindPopup(popupContent, popupOptions);
-// layer.setIcon(crimemarker);
-// //controlLayers.addOverlay(schools, 'Schools');
-// };
+ layer.setIcon(crimemarker);
+
+ };
+
 var playground = L.geoJson(playgrounds, {
 	onEachFeature: playgroundMarker
 	
@@ -48,13 +50,14 @@ var schools = L.geoJson(schools, {
 	
 }).addTo(map);
 
-// var crime = L.geoJson(police, {
-// 	onEachFeature: crimeMarker
+var crime = L.geoJson(crime, {
+ 	onEachFeature: crimeMarker
 	
-// }).addTo(map);
+ }).addTo(map);
 
 controlLayers.addOverlay(playground, 'Children Playgrounds');
 controlLayers.addOverlay(schools, 'Schools');
+controlLayers.addOverlay(crime, 'Crime');
 //controlLayers.addOverlay(crime, 'Crime');
 
 
