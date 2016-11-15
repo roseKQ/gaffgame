@@ -72,7 +72,7 @@ function handleCardDrop( event, ui ) {
     console.log(correctCards);
     attempts++;
   } 
-   if ( slotNumber != cardNumber ) {
+  /* if ( slotNumber != cardNumber ) {
     ui.draggable.addClass( 'incorrect' );
     ui.draggable.draggable( 'disable' );
     $(this).droppable( 'disable' );
@@ -81,7 +81,7 @@ function handleCardDrop( event, ui ) {
     console.log(correctCards);
     attempts++;
    
-  } 
+  } */
   
   
   // If all the cards have been placed correctly then display a message

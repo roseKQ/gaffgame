@@ -60,7 +60,7 @@ function handleCardDrop( event, ui ) {
   // again
  
 
-  /*if ( slotNumber != cardNumber ) {
+  if ( slotNumber != cardNumber ) {
     ui.draggable.addClass( 'incorrect' );
     ui.draggable.draggable( 'disable' );
     $(this).droppable( 'disable' );
@@ -69,7 +69,7 @@ function handleCardDrop( event, ui ) {
     console.log(correctCards);
     attempts++;
    
-  } */
+  } 
   if ( slotNumber == cardNumber ) {
     ui.draggable.addClass( 'correct' );
     ui.draggable.draggable( 'disable' );
