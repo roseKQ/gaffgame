@@ -19,37 +19,16 @@ function datatypes(menu, correct){
       score += 1;
       attempts+=1;
       console.log(score);
-     
-      //move();
       
-     $('.progress-bar').css('width', 40 + '%');
-    //$('#displayScore').html('<h2> Your score is' +score+'/5</h2>').show();
     }else{
       score=score;
       console.log(isCorrect);
       console.log(score);
-      attempts+=1
-    $('.progress-bar').css('width', 40 + '%');
-    // move();
-    
-   
+      attempts+=1;
   }
 
-    /*function move() {
-    var elem = document.getElementById("myBar"); 
-    var width = 1;
-    var id = setInterval(frame, 10);
-    function frame() {
-        if (width >= 100) {
-            clearInterval(id);
-        } else {
-            $('.progress-bar').css('width', 20 + '%');
-    
-        }
-    }
-}*/
 if(attempts == 5){
-       $('#displayScore').html('<h2> You got ' +score+ ' correct!</h2>').show();
+       $('#displayScore').html('<h2> Your score is ' +score+ '/5!</h2>').show();
     }
 }
 
