@@ -221,6 +221,7 @@ header .device-container .screen img {
 }
 section {
   padding: 100px 0;
+min-height: auto;
 }
 section h2 {
   font-size: 50px;
