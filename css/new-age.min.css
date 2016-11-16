@@ -26,8 +26,7 @@ box-shadow: 10px 10px 5px #888888;}
     }
 
 .tooltip {
-  top:-1
-  25px;
+  top:-125px;
   left:30px;
   width:175px;
   position:absolute;
