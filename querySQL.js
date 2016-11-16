@@ -102,6 +102,9 @@ function handleCardDrop( event, ui ) {
         break;
     case 4:
         $('#correctMessage').html('<h2>'+correctCards+'/4, Perfect!</h2>').show();
+        $('#tableMsg').text('Your query has returned all the rows from the Crime table as shown below!');
+        $('#tableMsg').css({'font-size':'26px'});
+        $('#Pic').append('<img id="tableImg" src="img/primary_key_table-01.png" />');
         break;
 }
 
